@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    const exportCotizacionPdf = () => {
+        const view = 'pdf'
+        let options = {
+            general: {
+                taxBreakdown: true,
+                discount: true,
+                parity: true,
+                sellerSign: true
+            },
+            products: {
+                productKey: true,
+                images: true,
+                characteristics: true,
+                weigh: true
+            }
+        }
+
+        const data = {
+            date: 1807110465663,
+            invoice: '900913',
+            currency: 'USD',
+            changeType: '1.00',
+            clientNumber: '5264',
+            clientName: 'RAFAELI CAMPOSORIO RUIZO',
+            clientAddress: 'Cuastecomates 57, 48903, Jardines de Autlan, Autlan de Navarro, Jalisco',
+            clientPhoneNumber: '(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696,(317) 103826696',
+            clientEmail: 'client@sicar.mx',
+            products: [{
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '1',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 1',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 1\n Salto de linea xd \nLista: \n-1\n-2\n-3\n-4\n-5\n-6\n-7\n-8\n-9\n-10\n-11\n-12\n-13\n-14\n-15\n-16\n-17\n-18\n-19\n-20\n-21\n-22\n-23\n-24\n-25\n-26\n-27\n-28\n-29\n-30\n-31\n-32\n-33\n-34\n-35\n-36\n-37\n-38\n-39\n-40\n-41\n-42\n-43\n-44\n-45',
+                priceUnity: '220000.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '1854764.00',
+            }, {
+                imageProductURL: 'https://d22ywsek2phgai.cloudfront.net/product/623/e7e9aa9f-cd7c-4838-af91-646210afe54d',
+                key: '2',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 2',
+                characteristics: 'Caracteristicas xd 2 este es un texto encaracteristicas sin salto de linea previo, todo lo separa por medio de la funcion "automaticamente", deberia estar justificado el texto',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            }, {
+                imageProductURL: 'https://product.sicarx.cloud/product/56/7b2d447f-d905-4769-8122-d668998bb107',
+                key: '3',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 3',
+                characteristics: 'Otras caracteristicas random 3\nSalto de linea xd',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            }, {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '4',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 4',
+                characteristics: 'Mas caracteristicas para hacer pruebas\nAqui se hizo un salto de linea para ver como hacer la division 4',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            }, {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: 'https://catalogue.sicarx.cloud/product/3377bf44-02ae-407f-a7f6-821700e7ea7c',
+                key: '5',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 5',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 5',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            },
+            {
+                imageProductURL: null,
+                key: '6',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 6',
+                characteristics: 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW 6',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            }, {
+                imageProductURL: null,
+                key: '7',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 7',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas largas cuando no hay imagen del producto, o sea, el rango de caracteristicas a lo ancho es mayor 7',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            }, {
+                imageProductURL: null,
+                key: '8',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 8',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 8',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            }, {
+                imageProductURL: null,
+                key: '9',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 9',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 9',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            }, {
+                imageProductURL: null,
+                key: '10',
+                quantity: '1',
+                unity: 'PZA',
+                description: 'Producto 10',
+                characteristics: 'Producto de prueba para ver como se muestran las caracteristicas 10',
+                priceUnity: '22.00',
+                discountPercentage: '0',
+                discountPrice: '0',
+                amount: '44.00',
+            }],
+            subtotal: '89.00',
+            discountTotal: '110',
+            totalAmount: '113.24',
+            sellerName: 'Vendedor Gomez',
+            sellerPhoneNumber: '(317) 382 6696',
+            sellerExtension: '1',
+            sellerEmail: 'info@sicar.mx',
+            expirationDate: 1807110465663,
+            taxes: [{
+                taxAmount: '100.00',
+                taxName: 'IVA',
+                taxPercentage: '16'
+            }, {
+                taxAmount: '50.00',
+                taxName: 'IVA',
+                taxPercentage: '8'
+            }],
+            status: -1,
+            cancelledBy: 'Roberto',
+            sellerBy: 'Jose'
+        }
+
+        const companyLogo = /* companies?.branchOffice?.logoUrl */null
+        const companyName = /* companies?.branchOffice?.name; */'Company Name example'
+        const companyRfc = 'RFCFICTICIO12345'
+        const companyPhoneNumber = /* companies?.branchOffice?.phoneNumbers[0]?.phoneNumber */'3171098765'
+        const companyEmail = /* companies?.branchOffice?.emails[0] */'info@sicar.mx'
+        const companyAddress = ''
+        const date = data.date
+        const expirationDate = data?.expirationDate
+        const fileName = 'Cotizacion_' + data.invoice
+
+        return new Promise(async (resolve, reject) => {
+            let page = 1
+            let missingFields = 245 - 17
+            let tableHeight = 700 + 17
+            let tableHeightLast = 540 + 17
+            let refProd = 0
+            let last = false
+            let productSize = data.products.length
+            let htmlTemplate = document.createElement('div');
+            htmlTemplate.id = 'divMain'
+            htmlTemplate.style.cssText = `background-color: white !important; color: black !important; width: 740px; min-height: 1000px; position: relative; padding: 0px; ${view === "pdf" ? `padding-left: 20px;` : ` margin: 1cm auto;`} z-index: -1; letter-spacing: 0.2px; font-family: Arial, Helvetica, sans-serif;`
+            document.body.appendChild(htmlTemplate)
+            const main = document.getElementById('divMain');
+
+            let characteristicsArray = []
+            let imgCount = []
+            const imgNoExist = options.products.images ? '' : null
+            let productBase = await Promise.all(data.products.map(async (e, index) => {
+                let result = ['']
+                if (!!e.characteristics) {
+                    result = splitChar(e.characteristics, options.products.images ? true : false);
+                    characteristicsArray.push(result)
+                }
+                const base64Img = !!e.imageProductURL && options.products.images ? await createImage(e.imageProductURL) : null
+                // console.log('TRAJO IMAGEN: ', base64Img)
+                imgCount.push(base64Img === null ? false : true)
+                let str = `
+            <tr style="text-align: left;">
+                <td style="font-size: 12px; text-align: center; vertical-align: top;"><p>${e.quantity} ${e.unity}</p></td>
+                ${options.products.images ? `
+                    <td style="font-size: 12px; text-align: center; width: 10%; padding: 0; padding-top: 5px; border-collapse: collapse;">
+                        ${!!base64Img ?
+                            `${base64Img.outerHTML}`
+                            : `<img src="${imgNoExist}" alt='error2' style="width: 60px; height: 60px;">`}
+                                </td>` : ``}
+                <td style="width: 70%; max-width: 70%; min-width: 70%; padding: 0; padding-left: 2px;">
+                    <table id='tableRowProd_${index}' style="width: 100%">
+                        <tr  style="text-align: left;">
+                            <td style="font-size: 12px; color: rgb(130, 130, 130); vertical-align: top; padding: 0; margin: 0;">
+                                ${options.products.productKey ? `<p style="margin: 0; padding: 0;">${e.key}</p>` : ``}
+                                <p style=" color: black; word-break: break-all; margin: 0; padding: 0; letter-spacing: 0.2px;">${escapeHTMLTags(e.description)}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="font-size: 12px; text-align: right; width: 115px; max-width: 115px; min-width: 115px; vertical-align: top;"><p>${e.priceUnity}</p></td>
+                <td style="font-size: 12px; text-align: right; padding-right: 5px; width: 115px; max-width: 115px; min-width: 115px; vertical-align: top;">
+                    ${!!e.discountPercentage && parseFloat(e.discountPercentage) !== 0 ? `<p style="font-size: 10px; color: red; margin: 0; padding: 0; padding-top: 2px;"> - ${e.discountPercentage}% (${e.discountPrice})</p>` : ``}
+                    <p style="${!!e.discountPercentage && parseFloat(e.discountPercentage) !== 0 ? 'margin: 0; padding: 0;' : ''}">${e.amount}</p>
+                </td>
+            </tr>`
+                return str
+            })
+            )
+
+            let taxes = ['']
+            if (options.general.taxBreakdown && !!data.taxes && data.taxes.length !== 0) {
+                taxes = data.taxes.map((e) => {
+                    let str = `<tr>
+                <td colspan="2" style="font-size: 14px; text-align: right; color: rgb(100,100,100);">
+                    ${e.taxName} (${e.taxPercentage}%) <b>${e.taxAmount}</b>
+                </td>
+            </tr>`
+                    return str
+                })
+            }
+
+            !!!data.clientAddress && (missingFields -= 17, tableHeight += 17, tableHeightLast += 17)
+            !!!data.clientPhoneNumber && (missingFields -= 17, tableHeight += 17, tableHeightLast += 17)
+            !!!data.clientEmail && (missingFields -= 17, tableHeight += 17, tableHeightLast += 17)
+            data.status === 0 && (missingFields -= 17, tableHeight += 17, tableHeightLast += 17)
+            data.status === -1 && !!data.cancelledBy && (missingFields += 17, tableHeight -= 17, tableHeightLast -= 17)
+            data.clientName.length >= 115 && (missingFields += 17, tableHeight -= 17, tableHeightLast -= 17)
+            !!data.clientAddress && data.clientAddress?.length >= 115 && (missingFields += 17, tableHeight -= 17, tableHeightLast -= 17)
+            !!data.clientPhoneNumber && data.clientPhoneNumber?.length >= 115 && (missingFields += 17, tableHeight -= 17, tableHeightLast -= 17)
+            !!data.clientEmail && data.clientEmail?.length >= 115 && (missingFields += 17, tableHeight -= 17, tableHeightLast -= 17)
+
+            let charRef = 0
+            let loopCounter = 0
+            let charCount = 0
+            loopPage: for (let i = 1; i <= page; i++) {
+                console.log('Pagina ' + i)
+                let idPage = 'divPage' + i
+                let idHeader = 'divHeader' + i
+                let idTableDiv = 'divProducts' + i
+                let idTable = 'tProducts' + i
+                let idFooter = 'divFooter' + i
+                let idFooterTable = 'divFooterTable' + i
+
+                const headerString = `<table style=" width: 100%; border-bottom: 1.5px solid rgb(240, 240, 240);">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" style="text-align: right; color: rgb(130, 130, 130); font-size: 12px; text-align: right; padding-right: 6px; ">
+                                        Fecha y hora: ${date}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    ${!!companyLogo && companyLogo !== '' ? `<td style=" width: 100px; height: 100px;">
+                                        <img style="width: 100px; height: 100px;" src="${companyLogo}" alt="error" >
+                                        </td>` : ''}
+
+                                    <td style="vertical-align: top;">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td>
+                                                    <table style="width: 100%;">
+                                                        <tr>
+                                                            <td style="font-size: 14px;">${companyName}</td>
+                                                        </tr>
+                                                        ${!!companyRfc && companyRfc !== '' ? `<tr><td style="font-size: 12px; letter-spacing: 0.8px;">${companyRfc}</td></tr>` : ''}
+                                                        ${!!companyAddress && companyAddress !== '' ? `<tr><td style="font-size: 12px; ">${companyAddress}</td></tr>` : ''}
+                                                        ${!!companyPhoneNumber && companyPhoneNumber !== '' ? `<tr><td style="font-size: 12px; ">${companyPhoneNumber}</td></tr>` : ''}
+                                                        ${!!companyEmail && companyEmail !== '' ? `<td style="font-size: 12px; ">${companyEmail}</td>` : ''}
+                                                    </table>
+                                                </td>
+                                                <td style="vertical-align: top;">
+                                                    <table style="width: 100%;">
+                                                        <tr>
+                                                            <td style="font-size: 12px; text-align: right;">Cotización vigente hasta el ${expirationDate}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align: right; color: #1A457C; font-size: 12px; ">
+                                                                <b style="font-size: 13px;">Cotización ${data.invoice}</b>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <table style="width: 100%;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table style=" width: 100%;">
+                                            <tr>
+                                                <td style="font-size: 12px; color: rgb(130, 130, 130)">Cliente</td>
+                                            </tr>
+                                                <td style="font-size: 12px; letter-spacing: 0.2px;">${data.clientName}</td>
+                                            </tr>
+                                            ${!!data.clientAddress ? `<tr>
+                                                <td style="font-size: 12px; ">${data.clientAddress}</td>
+                                                </tr>` : ''}
+                                            ${!!data.clientPhoneNumber ? `<tr>
+                                                <td style="font-size: 12px; ">${data.clientPhoneNumber}</td>
+                                            </tr>` : ''}
+                                            ${!!data.clientEmail ? `<tr>
+                                                <td style="font-size: 12px; ">${data.clientEmail}</td>
+                                            </tr>` : ''}
+                                            ${data.status === -1 && !!data.cancelledBy ? `<tr>
+                                                    <td style="font-size: 12px; ">Cancelado por: ${data.cancelledBy}</td>
+                                                </tr>` : data.status === 1 ? `<tr>
+                                                <td style="font-size: 12px; ">VENDIDO</td>
+                                            </tr>` : ``}
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>`
+                const tableString = `<tbody>
+                        <tr style="background-color: rgb(236, 236, 236); color: rgb(100, 100, 100); text-align: center;">
+                        <td style="font-size: 12px; border-top-left-radius: 8px; padding-right: 10px; padding-top: 8px; padding-bottom: 8px;">Cantidad</td>
+                        <td colspan="2" style="font-size: 12px; text-align: left; padding-top: 8px; padding-bottom: 8px;">Descripción</td>
+                        <td style="font-size: 12px;  text-align: right; padding-top: 8px; padding-bottom: 8px;">Precio</td>
+                        <td
+                            style="font-size: 12px; border-top-right-radius: 8px; text-align: right; padding-right: 5px; padding-top: 8px; padding-bottom: 8px;">
+                            Importe</td>
+                        </tr>
+                    </tbody>`
+                let totalFooterString = `<tr style="vertical-align: bottom;">
+                            <td colspan="2" style="padding: 0px;">
+                                <table style=" width: 100%;">
+                                <tr>
+                                    <td style=" width: 50%; vertical-align: bottom;">
+                                    ${options.general.sellerSign && !!data.sellerName ? `<table style="width: 100%;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>_________________________________________</td>
+                                                </tr>
+                                                <tr style="font-size: 12px; text-align: left; ">
+                                                    <td colspan='1' style="width: 50%;">${data.sellerName}</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr style="font-size: 12px; text-align: left;">
+                                                    <td>${!!data.sellerPhoneNumber && data.sellerPhoneNumber !== '' ? `Tel. ${data.sellerPhoneNumber}` : ''} ${!!data.sellerExtension && data.sellerExtension !== '' ? `Ext. ${data.sellerExtension}` : ''} ${!!data.sellerEmail && data.sellerEmail !== '' ? `| ${data.sellerEmail}` : ''}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>` : ``}
+                                    </td>
+                                        
+                                    <td style="vertical-align: bottom;">
+                                        <table style="width: 100%;" id="tableTotal">
+                                            <tr>
+                                                <td colspan="2" style="font-size: 14px; text-align: right; color: rgb(100,100,100);">Subtotal
+                                                    <b>${data.subtotal}</b>
+                                                </td>
+                                            </tr>
+                                            ${options.general.discount && !!data.discountTotal && parseFloat(data.discountTotal) !== 0 ? `<tr>
+                                                <td colspan="2" style="font-size: 14px; text-align: right; color: rgb(100,100,100);">Descuentos
+                                                    <b>${data.discountTotal}</b>
+                                                </td>
+                                            </tr>` : ''}
+
+                                            ---remove---
+
+                                            <tr>
+                                                <td colspan="2" style="font-size: 14px; text-align: right; color: rgb(100,100,100) !important;">
+                                                    <b style="color: gray !important;">Total</b> <b>${data.totalAmount}</b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table style="width: 100%;">
+                                                        <tr>
+                                                            ${options.general.parity && !!data.changeType ? `<td
+                                                                    style="font-size: 12px; text-align: right; color: rgb(130, 130, 130); padding: 0;">
+                                                                    Moneda <b>${data.currency}</b> Tipo de cambio <b>${data.changeType}</b></td>` : `<td
+                                                                    style="font-size: 12px; text-align: right; color: rgb(130, 130, 130)">
+                                                                    Moneda <b>${data.currency}</b></td>`}
+                                                            </tr>
+                                                    </table>
+                                                </td>
+                                            <tr>
+                                            ${!options.general.taxBreakdown ? `<tr style="font-size: 12px; text-align: right;">
+                                                    <td colspan='2'>
+                                                        Precios con impuestos incluidos*
+                                                    </td>
+                                                </tr>`: ``}
+                                        </table>
+                                    </td>
+                                </tr>
+                                </table>
+                            </td>
+                        </tr>`
+                let signFooterString = `<tr style="vertical-align: bottom;">
+                            <td class="pageFooterClass" style="font-size: 12px; text-align: right; padding-right: 6px; ">Página ${page} de </td>
+                        </tr>`
+
+                const canceledMark = `<div style="position: absolute; bottom: 0; left: 0; right: 0; top: 0; width: 500px; height: 80px; text-align: center; margin: auto; opacity: 0.9; border-radius: 25px; color: rgb(200,75,75); font-size: 70px; font-weight: bold; border: 10px solid rgb(200,75,75); -webkit-transform: rotate(-30deg); -moz-transform: rotate(-30deg); ">
+                <p style="color: rgb(200,75,75); opacity: 0.9; margin: 0;">CANCELADO</p>
+            </div>`
+
+                let pageDiv = document.createElement('div')
+                pageDiv.id = idPage
+                pageDiv.style.cssText = view === "pdf" ?
+                    ` print-color-adjust: exact; width: 100%; padding: 0px; margin: 0px; display: flex; height: 1000px; flex-direction: column; justify-content: space-between; ${page !== 1 ? 'margin-top: 30px' : 'margin-top: 0px'};`
+                    : ` print-color-adjust: exact; width: 700px; padding: 0px; margin: 0px; display: flex; height: 1000px; flex-direction: column; justify-content: space-between; ${page !== 1 ? 'margin-top: 30px' : 'margin-top: 0px'}; background: white; position: relative; padding: 20px; border: 1px #D3D3D3 solid; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);`
+                main?.appendChild(pageDiv)
+
+                let header = document.createElement('div')
+                header.id = idHeader
+                header.style.cssText = `width: 100%; height: ${missingFields}px;`
+                header.innerHTML = headerString
+                pageDiv?.appendChild(header)
+
+                let tableDiv = document.createElement('div')
+                tableDiv.id = idTableDiv
+                tableDiv.style.cssText = 'width: 100%; flex: 1'
+                pageDiv?.appendChild(tableDiv)
+
+                let table = document.createElement('table')
+                table.id = idTable
+                table.style.cssText = 'width: 100%; border-collapse: collapse;'
+                table.innerHTML = tableString
+                tableDiv?.appendChild(table)
+
+
+                let heightFoot = 50
+                loopProduct: for (let j = refProd; j < (productSize); j++) {
+                    heightFoot = 50
+                    last = true
+                    let idProd = 'product' + j
+
+                    if (charRef === 0) {
+                        let newRow = document.createElement('tr');
+                        newRow.id = idProd
+                        newRow.className = 'productRow'
+                        newRow.style.cssText = loopCounter % 2 === 0 ? `text-align: left; vertical-align: top; background-color: white;` : `text-align: left; vertical-align: top; background-color: rgb(220, 220, 220);`
+                        newRow.innerHTML = productBase[j]
+                        table?.appendChild(newRow)
+                    }
+                    if (charRef !== 0) {
+                        let newRow = document.createElement('tr');
+                        newRow.id = idProd
+                        newRow.style.cssText = loopCounter % 2 === 0 ? `text-align: left; vertical-align: top; background-color: white;` : `text-align: left; vertical-align: top; background-color: rgb(220, 220, 220);`
+                        newRow.innerHTML = `
+                            <td style="font-size: 12px; text-align: left; vertical-align: top;"></td>
+                            ${options.products.images ? `<td style="text-align: center; width: 10%; padding: 0; border-collapse: colapse;"></td>` : ``}
+                            <td style="width: 70%; max-width: 70%; min-width: 70%; padding: 0; padding-left: 2px;">
+                                <table id='tableRowProd_${j}_${charCount}' style="width: 100%"></table>
+                            </td>
+                            <td style="font-size: 12px; text-align: right; width: 90px; max-width: 90px; min-width: 90px; vertical-align: middle;"></td>
+                            <td style="font-size: 12px; text-align: right; padding-right: 10px; width: 90px; max-width: 90px; min-width: 90px; vertical-align: middle;"></td>`
+                        table?.appendChild(newRow)
+                    }
+
+                    if (characteristicsArray != null && characteristicsArray?.[j]?.length >= 1 && characteristicsArray?.length <= productBase.length) {
+                        loopChar: for (let i = charRef; i < characteristicsArray[j].length; i++) {
+                            const idRowChar = `charLine_${j}-${i}`
+                            let newRowChar = document.createElement('tr');
+                            newRowChar.id = idRowChar
+                            newRowChar.style.cssText = `text-align: left; vertical-align: top; background-color: ${loopCounter % 2 === 0 ? 'white' : 'rgb(220, 220, 220)'};`
+                            newRowChar.innerHTML = `
+                                    <td style="font-size: 12px; color: rgb(130, 130, 130); ">
+                                        <pre style="white-space: pre-wrap; word-break: break-all; letter-spacing: 0.05px; font-family: arial; margin: 0; padding: 0;">${escapeHTMLTags(characteristicsArray[j][i]).trim()}</pre>
+                                    </td>`
+                            let getIDTab = charRef !== 0 ? `tableRowProd_${j}_${charCount}` : `tableRowProd_${j}`
+                            let insertChar = document.getElementById(getIDTab)
+                            insertChar?.appendChild(newRowChar)
+
+                            if (!!table && table?.offsetHeight >= tableHeight) {
+                                document.getElementById(idRowChar)?.remove()
+                                page++
+                                refProd = j
+                                last = false
+                                charRef = i
+                                charCount++
+                                break loopProduct;
+                            }
+                            if (j === (productSize - 1)) {
+                                if (!!table && table?.offsetHeight >= tableHeightLast) {
+                                    console.log('New Page por char')
+                                    document.getElementById(idRowChar)?.remove()
+                                    page++
+                                    refProd = j
+                                    last = false
+                                    charRef = i
+                                    charCount++
+                                    break loopProduct;
+                                }
+                                heightFoot = 150
+                                if (taxes.length !== 0) {
+                                    heightFoot += (taxes.length * 20)
+                                }
+                            }
+
+                            refProd = j
+                        }
+                        charRef = 0
+                    }
+
+                    loopCounter++
+                    if (!!table && table?.offsetHeight >= tableHeight) {
+                        document.getElementById(idProd)?.remove()
+                        page++
+                        refProd = j
+                        last = false
+                        loopCounter = 0
+                        break;
+                    }
+                    if (j === (productSize - 1)) {
+                        if (!!table && table?.offsetHeight >= tableHeightLast) {
+                            console.log('New Page')
+                            document.getElementById(idProd)?.remove()
+                            page++
+                            refProd = j
+                            last = false
+                            loopCounter = 0
+                            break;
+                        }
+                        heightFoot = 150
+                        if (taxes.length !== 0) {
+                            heightFoot += (taxes.length * 20)
+                        }
+                    }
+                    charCount++
+                }
+
+                let footer = document.createElement('div')
+                footer.id = idFooter
+                footer.style.cssText = `width: 100%; height: ${heightFoot}px; vertical-align: bottom;`
+
+                let footerTable = document.createElement('table')
+                footerTable.id = idFooterTable
+                footerTable.style.cssText = "width: 100%; height: 100%;"
+                if (last) {
+                    let rowTaxes = ''
+                    for (let x = 0; x < taxes.length; x++) {
+                        rowTaxes = rowTaxes + taxes[x]
+                    }
+                    totalFooterString = totalFooterString.replace('---remove---', rowTaxes)
+                    footerTable.innerHTML = totalFooterString + signFooterString
+                } else {
+                    footerTable.innerHTML = signFooterString
+                }
+
+                if (data.status === -1) {
+                    let canceled = document.createElement('div')
+                    canceled.style.cssText = "opacity: 0.5; z-index: 0; position: absolute; width: 740px; display: flex; min-height: 1000px; justify-content: center; align-items: center;"
+                    canceled.innerHTML = canceledMark
+                    pageDiv?.appendChild(canceled)
+                }
+                footer?.appendChild(footerTable)
+                pageDiv?.appendChild(footer)
+
+            }
+
+            for (let h = 0; h < page; h++) {
+                main?.getElementsByClassName('pageFooterClass')[h].insertAdjacentText('beforeend', page.toString())
+            }
+
+        })
+    }
+
+    function escapeHTMLTags(texto) {
+        var mapaEntidades = {
+            "<": "&lt;",
+            ">": "&gt;",
+            "&": "&amsp;"
+        };
+        let res = texto.replace(/[<>&]/g, function (caracter) {
+            return mapaEntidades[caracter] || caracter;
+        });
+
+        return res.trimStart().trimEnd();
+    }
+
+    const splitChar = (text) => {
+        var regex = /(.{1,60})|.+(\n)/gm;
+        let arrPre = text.match(regex);
+
+        return arrPre
+
+    }
+
+    const createImage = async (url) =>
+        new Promise((resolve, reject) => {
+            const image = new Image(60, 60);
+            image.addEventListener('load', () => { console.log('IMG GOOD: ', image), resolve(image) });
+            image.addEventListener('error', (error) => { console.log('ERROR IMG: ', error), reject(error) });
+            image.setAttribute('crossOrigin', 'anonymous'); // needed to avoid cross-origin issues on CodeSandbox
+            image.style.cssText = 'border-radius: 5px; '
+            image.src = url;
+        });
+</script>
+
+<body onload="exportCotizacionPdf()">
+
+</body>
+
+</html>
